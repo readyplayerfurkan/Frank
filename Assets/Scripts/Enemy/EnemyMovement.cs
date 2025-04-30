@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -8,5 +7,10 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         gameObject.transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed);
+    }
+
+    private void OnEnable()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 }
