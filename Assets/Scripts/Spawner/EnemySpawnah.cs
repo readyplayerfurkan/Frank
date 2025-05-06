@@ -21,19 +21,43 @@ public class EnemySpawnah : ObjectPooling<GameObject>
     {
         while (true)
         {
-            GetItem();
+            itemInstantiate = GetItem();
+            AdjustEnemyPosition(itemInstantiate);
             yield return new WaitForSeconds(EnemySpawnInterval);        
         }
     }
     
-    private void EnemyTeleporter(GameObject enemy)
-    {       
-        // Random.Range(1,4) -> Bu bir bölge verecek.
+    // Oyuncunun gÃ¶rÃ¼ÅŸ alanÄ± dÄ±ÅŸÄ±nda kalan alanda dÃ¼ÅŸmanlarÄ±n spawn olacaÄŸÄ± noktalar burada belirleniyor.
+    private void AdjustEnemyPosition(GameObject enemy)
+    {
+        int selectedArea = Random.Range(0, 4);
+        
+        float spawnPointXPositive = player.transform.position.x + EnemySpawnPointX;
+        float spawnPointXNegative = player.transform.position.x - EnemySpawnPointX;
+        
+        float spawnPointYPositive = player.transform.position.y + EnemySpawnPointY;
+        float spawnPointYNegative = player.transform.position.y - EnemySpawnPointY;
 
-            // 1. Bölge x -> 17 y -> 6 ila -6 arasý (Ekranýn En Sað Kýsmý) Vector3(17, Random.Range(-6,6), 0)
-            // 2. Bölge x -> -17 ila 17 arasý y -> -6 (Ekranýn Alt Kýsmý)
-            // 3. Bölge x -> -17 y -> 6 ila -6 arasý (Ekranýn En Sol Kýsmý)
-            // 4. Bölge x -> -17 ila 17 arasý y -> 6 (Ekranýn En Üst Kýsmý)
+        float randomPointX = Random.Range(player.transform.position.x - EnemySpawnPointX,
+            player.transform.position.x + EnemySpawnPointX);
+        float randomPointY = Random.Range(player.transform.position.y - EnemySpawnPointY,
+            player.transform.position.y + EnemySpawnPointY);
+        
+        switch (selectedArea)
+        {
+            case 0:
+                enemy.transform.position = new Vector3(spawnPointXPositive, randomPointY, 0);
+                break;
+            case 1:
+                enemy.transform.position = new Vector3(randomPointX, spawnPointYNegative, 0);
+                break;
+            case 2:
+                enemy.transform.position = new Vector3(spawnPointXNegative, randomPointY, 0);
+                break;
+            case 3:
+                enemy.transform.position = new Vector3(randomPointX, spawnPointYPositive, 0);
+                break;
+        }
     }
 }
 
