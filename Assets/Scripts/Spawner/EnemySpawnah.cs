@@ -38,10 +38,8 @@ public class EnemySpawnah : ObjectPooling<GameObject>
         float spawnPointYPositive = player.transform.position.y + EnemySpawnPointY;
         float spawnPointYNegative = player.transform.position.y - EnemySpawnPointY;
 
-        float randomPointX = Random.Range(player.transform.position.x - EnemySpawnPointX,
-            player.transform.position.x + EnemySpawnPointX);
-        float randomPointY = Random.Range(player.transform.position.y - EnemySpawnPointY,
-            player.transform.position.y + EnemySpawnPointY);
+        float randomPointX = Random.Range(spawnPointXNegative, spawnPointXPositive);
+        float randomPointY = Random.Range(spawnPointYNegative, spawnPointYPositive);
         
         switch (selectedArea)
         {
