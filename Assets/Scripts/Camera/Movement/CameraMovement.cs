@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+public class CameraMovement  : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Vector3 offset;
-    void Update()
+
+    private void Update()
     {
-        transform.position = playerTransform.position + offset;
+         transform.position = playerTransform.position + offset;
     }
 }
