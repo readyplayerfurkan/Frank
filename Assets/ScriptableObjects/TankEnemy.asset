@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c48d204f631474996c4cf4c5865ff8, type: 3}
   m_Name: TankEnemy
   m_EditorClassIdentifier: 
-  health: 1000
-  maxHealth: 1000
+  health: 100
   speed: 2
   damage: 2
-  range: 2
-  enemyType: 0
+  range: 1

@@ -8,14 +8,11 @@ public class EnemySpawnah : ObjectPooling<GameObject>
     [SerializeField] private float EnemySpawnInterval;
     [SerializeField] private float EnemySpawnPointX;
     [SerializeField] private float EnemySpawnPointY;
-    [SerializeField] private EnemySO archerEnemy;
-
     
     private GameObject player;
 
     private void Start()
     {
-        Debug.Log(archerEnemy.range);
         ObjectPool();
         player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(SpawnEnemyCoroutine());
