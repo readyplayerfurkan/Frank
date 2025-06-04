@@ -16,4 +16,4 @@ MonoBehaviour:
   maxHealth: 100
   damage: 5
   currentSpeed: 10
-  maxSpeed: 10
+  maxSpeed: 5

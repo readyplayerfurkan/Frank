@@ -452,6 +452,8 @@ GameObject:
   - component: {fileID: 1416083891}
   - component: {fileID: 1416083890}
   - component: {fileID: 1416083892}
+  - component: {fileID: 1416083894}
+  - component: {fileID: 1416083893}
   m_Layer: 0
   m_Name: Frank
   m_TagString: Player
@@ -542,6 +544,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSO: {fileID: 11400000, guid: 62ee72a145d244342a0e573c67a8b723, type: 2}
+--- !u!70 &1416083893
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416083889}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.02456379, y: -0.29919678}
+  m_Size: {x: 1.3437634, y: 1.7734021}
+  m_Direction: 0
+--- !u!114 &1416083894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416083889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a239c79e15d04f98beff7e0f13b1926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSO: {fileID: 11400000, guid: 62ee72a145d244342a0e573c67a8b723, type: 2}
 --- !u!1 &1530002418
 GameObject:
   m_ObjectHideFlags: 0
